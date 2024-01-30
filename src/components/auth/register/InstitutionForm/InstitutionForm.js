@@ -52,7 +52,7 @@ const InstitutionForm = ({
     const handleNextForm = async (data) => {
         triggerLoading();
 
-        const res = await fetch('http://localhost:3000/api/auth/verify', {
+        const res = await fetch('https://academic-dashboard-demo.vercel.app/api/auth/verify', {
             method: "POST",
             headers: {
                 'Content-Type': 'application/json'

@@ -35,7 +35,7 @@ const LoginForm = ({ triggerLoading, closeLoading }) => {
     const handleLoginForm = async (data) => {
         triggerLoading();
         localStorage.clear(); //Clear In-Case Logout
-        const res = await fetch('http://localhost:3000/api/auth/login', {
+        const res = await fetch('https://academic-dashboard-demo.vercel.app/api/auth/login', {
             method: "POST",
             headers: {
                 'Content-Type': 'application/json'
