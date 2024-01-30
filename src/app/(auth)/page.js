@@ -1,11 +1,11 @@
 import LoginWidget from "@/components/auth/login/LoginWidget"
 import { Box } from "@mui/material"
-import DemoAnnBackdrop from "./DemoAnnBackdrop"
+import DemoAnn from "./DemoAnn"
 
 const login = () => {
     return (
         <>
-            <DemoAnnBackdrop />
+            <DemoAnn />
             <Box
                 sx={{
                     display: 'flex',
