@@ -11,7 +11,7 @@ export async function middleware(request) {
             const { value: cookieRole } = request.cookies.get('role');
             const role = cookieRole.toLowerCase();
 
-            return NextResponse.redirect(`http://localhost:3000/${role}/${username}`);
+            return NextResponse.redirect(`https://academic-dashboard-demo.vercel.app/${role}/${username}`);
         } else {
             return NextResponse.next();
         }
@@ -21,7 +21,7 @@ export async function middleware(request) {
     //Redirects Them To Login Page
     const hasCookies = (request.cookies.has('username')) && (request.cookies.has('role'));
     if(!hasCookies) {
-        return NextResponse.redirect('http://localhost:3000/');
+        return NextResponse.redirect('https://academic-dashboard-demo.vercel.app/');
     } else {
         return NextResponse.next();
     }
