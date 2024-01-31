@@ -75,32 +75,35 @@ const CheckpointsSection = ({
 
     /* Modify Checkpoint's Content */
     const handleContent = () => {
-        const outdatedLists = [...userChecklists];
-        const outdatedGroups = [...userGroups];
-        if(newContent.trim() != '') {
-            try {
-                setUpdating(false);
-                const { updatedLists, updatedGroups } = modifyCheckpoint(
-                    checklists,
-                    groups,
-                    listId,
-                    groupId,
-                    index, 
-                    newContent);
+        //Checkpoint's Content Changed
+        if(isUpdating === true) {
+            const outdatedLists = [...userChecklists];
+            const outdatedGroups = [...userGroups];
+            if(newContent.trim() != '') {
+                try {
+                    setUpdating(false);
+                    const { updatedLists, updatedGroups } = modifyCheckpoint(
+                        checklists,
+                        groups,
+                        listId,
+                        groupId,
+                        index, 
+                        newContent);
 
-                //Update State Value
-                changeChecklists(updatedLists);
-                changeGroups(updatedGroups);
+                    //Update State Value
+                    changeChecklists(updatedLists);
+                    changeGroups(updatedGroups);
 
-            } catch(error) {
-                handleOpenAlert(error.message);
+                } catch(error) {
+                    handleOpenAlert(error.message);
 
-                //Undo Changes Made
-                changeChecklists(outdatedLists);
-                changeGroups(outdatedGroups);
+                    //Undo Changes Made
+                    changeChecklists(outdatedLists);
+                    changeGroups(outdatedGroups);
+                }
+            } else {
+                setNewContent(content);
             }
-        } else {
-            setNewContent(content);
         }
     }
 
