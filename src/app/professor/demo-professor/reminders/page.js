@@ -3,9 +3,6 @@ import { groupIds, groups, todayReminders, upcomingReminders } from "@/lib/data/
 
 export const metadata = {
     title: "Reminders",
-}
-
-export const viewport = {
     themeColor: '#78a1bb'
 }
 

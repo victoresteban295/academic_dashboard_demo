@@ -5,9 +5,6 @@ import { notFound } from "next/navigation";
 
 export const metadata = {
     title: "Dashboard",
-}
-
-export const viewport = {
     themeColor: '#78a1bb'
 }
 

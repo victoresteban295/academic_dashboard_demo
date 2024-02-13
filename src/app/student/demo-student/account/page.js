@@ -3,9 +3,6 @@ import Image from "next/image";
 
 export const metadata = {
     title: "Account",
-}
-
-export const viewport = {
     themeColor: '#78a1bb'
 }
 

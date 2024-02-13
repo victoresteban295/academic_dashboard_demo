@@ -3,9 +3,6 @@ import Image from "next/image";
 
 export const metadata = {
     title: "Create a New Course",
-}
-
-export const viewport = {
     themeColor: '#78a1bb'
 }
 

@@ -4,10 +4,7 @@ import DemoAnn from "./DemoAnn"
 
 export const metadata = {
     title: "Academic Dashboard: Login",
-}
-
-export const viewport = {
-    themeColor: '#78a1bb'
+    themeColor: '#78a1bb',
 }
 
 const login = () => {
