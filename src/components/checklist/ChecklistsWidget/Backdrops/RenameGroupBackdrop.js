@@ -103,7 +103,7 @@ const RenameGroupBackdrop = ({
                     <Button
                         variant="contained"
                         size='small'
-                        disabled={rename === ''}
+                        disabled={rename.trim() === ''}
                         onClick={handleRenameGroup}
                     >
                         <Typography

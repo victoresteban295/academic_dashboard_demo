@@ -1,7 +1,15 @@
 import ChecklistPageContent from "@/components/checklist/ChecklistPageContent";
-import { allChecklists, checklists, grouplists } from "@/lib/data/checklist/professor";
+import { allChecklists, checklists, grouplists, listIds } from "@/lib/data/checklist/professor";
 import { cookies } from "next/dist/client/components/headers";
 import { notFound } from "next/navigation";
+
+export const metadata = {
+    title: "Checklist",
+}
+
+export const viewport = {
+    themeColor: '#78a1bb'
+}
 
 const ProfChecklistPage = () => {
     const cookieStore = cookies();
@@ -20,6 +28,7 @@ const ProfChecklistPage = () => {
                 allChecklists={allChecklists}
                 lists={checklists}
                 grouplists={grouplists}
+                listIds={listIds}
             />
         </>
     )

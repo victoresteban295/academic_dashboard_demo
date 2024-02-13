@@ -194,7 +194,7 @@ const AddToGroupBackdrop = ({
                         <Button
                             variant="contained"
                             size='small'
-                            disabled={(selectedGroupId === '') || ((selectedGroupId === 'new') && (newGroup === ''))}
+                            disabled={(selectedGroupId === '') || ((selectedGroupId === 'new') && (newGroup.trim() === ''))}
                             onClick={addToGroup}
                         >
                             <Typography

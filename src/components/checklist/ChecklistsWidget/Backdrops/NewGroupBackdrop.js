@@ -100,7 +100,7 @@ const NewGroupBackdrop = ({
                     <Button
                         variant="contained"
                         size='small'
-                        disabled={title === ''}
+                        disabled={title.trim() === ''}
                         onClick={handleNewGroup}
                     >
                         <Typography

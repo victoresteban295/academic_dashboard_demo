@@ -1,3 +1,4 @@
+export const listIds = ["1234cawa23", "g-ndww376n", "vraweli-0b", "trxford643", "toystangnb", "bvdhehdyeh", "dataappva-", "guapappeng"];
 export const allChecklists = [
     {
         username: "demo-student",
@@ -335,7 +336,7 @@ export const checklists = [
     },
     {
         username: "demo-student",
-        listId: "g-ndww376n ",
+        listId: "g-ndww376n",
         title: "Shopping List",
         groupId: "",
         checkpoints: [

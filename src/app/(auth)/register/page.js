@@ -1,6 +1,14 @@
 import RegisterWidget from "@/components/auth/register/RegisterWidget";
 import { Box } from "@mui/material";
 
+export const metadata = {
+    title: "Academic Dashboard: Register",
+}
+
+export const viewport = {
+    themeColor: '#78a1bb'
+}
+
 const register = () => {
 
     return (

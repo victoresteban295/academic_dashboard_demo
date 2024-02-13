@@ -1,6 +1,14 @@
 import { Box, Tooltip, Typography } from "@mui/material"
 import Image from "next/image";
 
+export const metadata = {
+    title: "Calendar",
+}
+
+export const viewport = {
+    themeColor: '#78a1bb'
+}
+
 const CalendarPage = () => {
     return (
         <Box

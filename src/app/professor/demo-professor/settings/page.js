@@ -1,6 +1,15 @@
 import { Box, Tooltip, Typography } from "@mui/material"
 import Image from "next/image";
 
+export const metadata = {
+    title: "Settings",
+}
+
+export const viewport = {
+    themeColor: '#78a1bb'
+}
+
+
 const SettingPage = () => {
     return (
         <Box

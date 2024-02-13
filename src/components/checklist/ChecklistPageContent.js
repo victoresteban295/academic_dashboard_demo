@@ -4,7 +4,7 @@ import { useEffect, useState } from "react";
 import ChecklistWidget from "./ChecklistWidget";
 import ChecklistsWidget from "./ChecklistsWidget";
 
-const ChecklistPageContent = ({ username, allChecklists, lists, grouplists }) => {
+const ChecklistPageContent = ({ username, allChecklists, lists, grouplists, listIds }) => {
 
     /* Determine User's Last Visited Checklist */
     useEffect(() => {
@@ -21,8 +21,16 @@ const ChecklistPageContent = ({ username, allChecklists, lists, grouplists }) =>
 
         //User Has Visited a Checklist
         } else {
-            //Set Current Checklist to Last Visited Checklist
-            lastVisitedList = localStorage.getItem("currentList");
+
+            //Current listId Exist
+            if(listIds.includes(localStorage.getItem("currentList"))) {
+                //Set Current Checklist to Last Visited Checklist
+                lastVisitedList = localStorage.getItem("currentList");
+            //Current GroupId Doesn't Exist
+            } else {
+                lastVisitedList = listIds[0];
+                localStorage.setItem("currentList", lastVisitedList);
+            }
         }
 
         //Current Checklist User is Viewing

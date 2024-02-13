@@ -17,7 +17,6 @@ const CourseButton = ({ username, role, course, active }) => {
         <Button
             variant='text'
             startIcon={isActive ? <ArrowRight /> : ''}
-            onClick={handleClick}
             sx={{
                 color: 'text.primary',
                 flexGrow: '1',
