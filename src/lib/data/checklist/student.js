@@ -49,7 +49,7 @@ export const allChecklists = [
     },
     {
         username: "demo-student",
-        listId: "g-ndww376n ",
+        listId: "g-ndww376n",
         title: "Shopping List",
         groupId: "",
         checkpoints: [
@@ -378,14 +378,14 @@ export const checklists = [
 export const grouplists = [
     {
         username: "demo-student",
-        groupId: "99-0989875",
+        groupId: "lklkikju12",
         title: "Personal",
         checklists: [
             {
                 username: "demo-student",
                 listId: "vraweli-0b",
                 title: "Finance",
-                groupId: "-9-0989875",
+                groupId: "lklkikju12",
                 checkpoints: [
                     {
                         index: "0",
@@ -458,7 +458,7 @@ export const grouplists = [
     },
     {
         username: "demo-student",
-        groupId: "ujflcawa23",
+        groupId: "2342323-ab",
         title: "Spring 2024",
         checklists: [
             {

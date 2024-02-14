@@ -252,7 +252,7 @@ const CheckpointsSection = ({
                 {!showAllEdit && (
                     <Box
                         sx={{
-                            display: 'flex',
+                            display: {xs: 'none', sm: 'flex'},
                             width: '60px',
                         }}
                     >
