@@ -21,6 +21,8 @@ const ReminderBackdrop = ({
     changeUpcomingReminders,
     groups,
     changeGroups,
+    currentReminders,
+    handleCurrentReminders,
     handleOpenAlert
 }) => {
 
@@ -107,6 +109,10 @@ const ReminderBackdrop = ({
                 changeGroups(updatedGroups);
 
                 //Backend API: Update Database
+                handleCurrentReminders("");
+                setTimeout(() => {
+                    handleCurrentReminders(currentReminders);
+                }, 10)
 
             }
         } catch(error) {

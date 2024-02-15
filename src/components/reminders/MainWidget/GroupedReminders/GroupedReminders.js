@@ -50,6 +50,7 @@ const GroupedReminders = ({
                         changeGroups={changeGroups}
                         reminders={reminders}
                         currentReminders={currentReminders}
+                        handleCurrentReminders={handleCurrentReminders}
                         handleOpenAlert={handleOpenAlert}
                     />
                 </Stack>

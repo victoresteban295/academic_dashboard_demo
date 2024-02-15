@@ -22,9 +22,11 @@ const Reminder = ({
     groups,
     changeGroups,
     currentReminders,
+    handleCurrentReminders,
     markAsComplete,
     handleOpenAlert
 }) => {
+
 
     const grpDay = dayjs(displayDate, "MM/DD/YY").format("dddd");
     const grpDate = dayjs(displayDate, "MM/DD/YY").format("MMMM D, YYYY");
@@ -172,6 +174,8 @@ const Reminder = ({
                     changeUpcomingReminders={changeUpcomingReminders}
                     groups={groups}
                     changeGroups={changeGroups}
+                    currentReminders={currentReminders}
+                    handleCurrentReminders={handleCurrentReminders}
                     handleOpenAlert={handleOpenAlert}
                 />
 
