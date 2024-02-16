@@ -5,8 +5,26 @@ import MainWidget from "./MainWidget";
 import RightWidget from "./RightWidget";
 import { LocalizationProvider } from '@mui/x-date-pickers';
 import { AdapterDayjs } from '@mui/x-date-pickers/AdapterDayjs';
+import { getStudentReminders } from "@/lib/data/reminders/student";
+import dayjs from "dayjs";
+import { getProfessorReminders } from "@/lib/data/reminders/professor";
 
-const RemindersPageContent = ({ today, upcoming, groupedReminders, groupIds }) => {
+const RemindersPageContent = ({ profile }) => {
+    let today, upcoming, groupedReminders, groupIds;
+    const todayDateTime = dayjs();
+    if(profile === "student") {
+        const { allGroupIds, todayReminders, upcomingReminders, groups } = getStudentReminders(todayDateTime);
+        today = todayReminders;
+        upcoming = upcomingReminders;
+        groupedReminders = groups;
+        groupIds = allGroupIds;
+    } else {
+        const { allGroupIds, todayReminders, upcomingReminders, groups } = getProfessorReminders(todayDateTime);
+        today = todayReminders;
+        upcoming = upcomingReminders;
+        groupedReminders = groups;
+        groupIds = allGroupIds;
+    }
 
     /* Reminder Group Being Viewed */
     const [currentReminders, setCurrentReminders] = useState('');
