@@ -119,9 +119,15 @@ const RemindersPageContent = ({ profile }) => {
                         onClose={handleCloseAlert}
                         severity="error"
                         sx={{
-                            width: '100%',
                             position: 'relative',
-                            top: {xs: '0px', sm: '0px', md: '50px'},
+                            color: 'text.primary',
+                            bgcolor: 'error.light',
+                            top: {
+                                fold: '0px',
+                                mobile: '0px',
+                                tablet: '50px',
+                                desktop: '50px',
+                            }
                         }}
                     >
                         {errorMsg}
@@ -150,7 +156,12 @@ const RemindersPageContent = ({ profile }) => {
                 <Box
                     className='rightside-menu-container'
                     sx={{
-                        display: {xs: 'none', sm: 'none', md: 'block'},
+                        display: {
+                            fold: 'none',
+                            mobile: 'none',
+                            tablet: 'none',
+                            desktop: 'block',
+                        },
                         flexGrow: 1,
                         maxWidth: '250px',
                         p: 1,

@@ -1,5 +1,5 @@
 import { createNewGroup } from "@/lib/utils/checklist/frontend/modifyGrouplist";
-import { Box, Button, FilledInput, Popover, Stack, Typography } from "@mui/material";
+import { Box, Button, Dialog, FilledInput, Stack, Typography } from "@mui/material";
 import { useState } from "react";
 
 const NewGroupBackdrop = ({ 
@@ -45,19 +45,9 @@ const NewGroupBackdrop = ({
     }
 
     return (
-        <Popover
-            anchorOrigin={{
-                vertical: 'top',
-                horizontal: 'center',
-            }}
-            transformOrigin={{
-                vertical: 'center',
-                horizontal: 'center',
-            }}
-            sx={{ 
-                mt: 10,
-                zIndex: (theme) => theme.zIndex.drawer + 1 
-            }}
+        <Dialog
+            fullWidth={true}
+            maxWidth="mobile"
             open={open}
             onClose={handleCloseBackdrop}
         >
@@ -92,29 +82,32 @@ const NewGroupBackdrop = ({
                     autoFocus
                     hiddenLabel
                     disableUnderline
-                    placeholder='New Group Title'
+                    placeholder='New Group Title...'
                     onChange={(event) => setTitle(event.target.value)}
                     inputProps={{maxLength: 20}}
                 />
-                <Box>
+                <Box
+                    sx={{
+                        display: 'flex',
+                        justifyContent: 'flex-end',
+                        alignItems: 'center',
+                    }}
+                >
                     <Button
-                        variant="contained"
+                        variant="text"
                         size='small'
                         disabled={title.trim() === ''}
                         onClick={handleNewGroup}
+                        sx={{
+                            fontWeight: '700',
+                            bgcolor: 'primary.light',
+                        }}
                     >
-                        <Typography
-                            sx={{
-                                color: '#000',
-                                fontWeight: '700',
-                            }}
-                        >
-                            Create
-                        </Typography>
+                        {"Create"}
                     </Button>
                 </Box>
             </Stack>
-        </Popover>
+        </Dialog>
     ) 
 }
 

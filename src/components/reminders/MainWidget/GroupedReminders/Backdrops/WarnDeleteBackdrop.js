@@ -1,5 +1,5 @@
-import { Cancel, Delete, WarningTwoTone } from "@mui/icons-material";
-import { Box, Button, Popover, Stack, Typography } from "@mui/material";
+import { Clear, Delete, WarningTwoTone } from "@mui/icons-material";
+import { Box, Button, Dialog, Stack, Typography } from "@mui/material";
 
 const WarnDeleteBackdrop = ({
     title,
@@ -20,19 +20,9 @@ const WarnDeleteBackdrop = ({
     }
 
     return (
-        <Popover
-            anchorOrigin={{
-                vertical: 'top',
-                horizontal: 'center',
-            }}
-            transformOrigin={{
-                vertical: 'center',
-                horizontal: 'center',
-            }}
-            sx={{ 
-                mt: 10,
-                zIndex: (theme) => theme.zIndex.drawer + 1 
-            }}
+        <Dialog
+            fullWidth={true}
+            maxWidth="mobile"
             open={open}
             onClose={handleCloseBackdrop}
         >
@@ -41,14 +31,18 @@ const WarnDeleteBackdrop = ({
                 sx={{
                     display: 'flex',
                     p: 2,
-                    maxWidth: '350px',
                 }}
             >
                 <Box
                     className="warning-message-container"
                     sx={{
                         display: 'flex',
-                        flexDirection: {xs: 'column', sm: 'row'},
+                        flexDirection: {
+                            fold: 'column',
+                            mobile: 'column',
+                            tablet: 'row',
+                            desktop: 'row',
+                        },
                         justifyContent: 'center',
                         alignItems: 'center'
                     }}
@@ -58,14 +52,25 @@ const WarnDeleteBackdrop = ({
                         sx={{
                             width: '50px',
                             height: '50px',
-                            mb: {xs: 1, sm: 0}
+                            mb: {
+                                fold: 1,
+                                mobile: 1,
+                                tablet: 0,
+                                desktop: 0,
+                            },
                         }}
                     />
                     <Typography
                         variant='body1'
+                        align="center"
                         sx={{
                             mx: 1,
-                            px: {xs: 0, sm: 1}
+                            px: {
+                                fold: 0,
+                                mobile: 0,
+                                tablet: 1,
+                                desktop: 1,
+                            },
                         }}
                     >
                         {`The ${title} group still has reminders that have not been completed. 
@@ -74,50 +79,80 @@ const WarnDeleteBackdrop = ({
                 </Box>
                 <Box
                     sx={{
-                        display: 'flex',
+                        display: {
+                            fold: 'none',
+                            mobile: 'flex',
+                            tablet: 'flex',
+                            desktop: 'flex',
+                        },
                         justifyContent: 'space-between',
+                        alignItems: 'center',
                     }}
                 >
                     <Button
-                        variant='contained'
+                        color="error"
                         onClick={deleteGroup}
-                        startIcon={<Delete sx={{color: '#000'}} />}
-                        color='error'
+                        variant="text"
+                        startIcon={<Delete />}
                         sx={{
-                            px: 1,
+                            fontWeight: '700',
+                            bgcolor: 'error.light'
                         }}
                     >
-                        <Typography
-                            variant='button'
-                            sx={{
-                                color: '#000',
-                                fontWeight: '700',
-                            }}
-                        >
-                            Delete
-                        </Typography>
-                    </Button>
+                        Delete
+                    </Button> 
                     <Button
-                        variant='contained'
-                        startIcon={<Cancel sx={{color: '#000'}} />}
+                        variant="text"
                         onClick={handleCloseBackdrop}
+                        startIcon={<Clear />}
                         sx={{
-                            px: 1,
+                            fontWeight: '700',
+                            bgcolor: 'primary.light'
                         }}
                     >
-                        <Typography
-                            variant='button'
-                            sx={{
-                                color: '#000',
-                                fontWeight: '700',
-                            }}
-                        >
-                            Cancel
-                        </Typography>
-                    </Button>
+                        Cancel
+                    </Button> 
+                </Box>
+                <Box
+                    sx={{
+                        display: {
+                            fold: 'flex',
+                            mobile: 'none',
+                            tablet: 'none',
+                            desktop: 'none',
+                        },
+                        justifyContent: 'space-between',
+                        alignItems: 'center',
+                    }}
+                >
+                    <Button
+                        size="small"
+                        onClick={deleteGroup}
+                        color="error"
+                        variant="text"
+                        startIcon={<Delete />}
+                        sx={{
+                            fontWeight: '700',
+                            bgcolor: 'error.light'
+                        }}
+                    >
+                        Delete
+                    </Button> 
+                    <Button
+                        onClick={handleCloseBackdrop}
+                        size="small"
+                        variant="text"
+                        startIcon={<Clear />}
+                        sx={{
+                            fontWeight: '700',
+                            bgcolor: 'primary.light'
+                        }}
+                    >
+                        Cancel
+                    </Button> 
                 </Box>
             </Stack>
-        </Popover>
+        </Dialog>
     )
 }
 

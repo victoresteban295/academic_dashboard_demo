@@ -1,10 +1,11 @@
-import { Alert, Box, Button, Stack, Typography } from "@mui/material";
+import { Alert, Box, Button, Dialog, Stack, Typography } from "@mui/material";
 import { useRouter } from 'next/navigation';
 import AccountReviewInput from "./AccountReviewInput";
 import StudentReviewInput from "./StudentReviewInput";
 import ProfessorReviewInput from "./ProfessorReviewInput";
 import { useState } from "react";
 import LoadingBackDrop from "@/components/loading/LoadingBackDrop";
+import { PersonAddAlt } from "@mui/icons-material";
 
 const ReviewForm = ({ 
     profileType, 
@@ -48,8 +49,21 @@ const ReviewForm = ({
     }
 
     const handleSubmitForm = () => {
-        triggerLoading();
-        router.push('/?success=true') 
+        handleOpenWarnDemo();
+        /* triggerLoading(); */
+        /* router.push('/')  */
+    }
+
+    /* Warn Demo Backdrop */
+    const [openWarnDemo, setOpenWarnDemo] = useState(false);
+    const handleOpenWarnDemo = () => {
+        setOpenWarnDemo(true);
+        setTimeout(() => {
+            handleCloseWarnDemo();
+        }, "5000");
+    }
+    const handleCloseWarnDemo = () => {
+        setOpenWarnDemo(false);
     }
     
     //add action and server action
@@ -62,6 +76,28 @@ const ReviewForm = ({
                 maxWidth: '500px',
             }}
         >
+            <Dialog
+                fullWidth={true}
+                maxWidth="mobile"
+                open={openWarnDemo}
+            >
+                <Box
+                    sx={{
+                        p: 2,
+                    }}
+                >
+                    <Typography
+                        align="center"
+                        variant="h6"
+                        sx={{
+                            fontWeight: '700',
+                        }}
+                    >
+                        {"Creating a New Account is not available for Demo!"}
+                    </Typography>
+                </Box>
+            </Dialog>
+
             <LoadingBackDrop loading={loading} />
             <form noValidate action={handleSubmitForm}>
                 <Alert
@@ -114,14 +150,18 @@ const ReviewForm = ({
                 </Stack>
                 <Box sx={{ display: 'flex', flexDirection: 'row', pt: 2 }}>
                     <Button 
-                        variant="contained"
+                        variant="text"
                         onClick={handleBack}
-                        sx={{ mr: 1 }}
+                        sx={{ 
+                            bgcolor: 'primary.light',
+                            mr: 1 ,
+                            px: 3,
+                        }}
                     > 
                         <Typography
                             variant="button"
                             sx={{
-                                color: '#000',
+                                color: 'primary.main',
                                 fontWeight: '700',
                             }}
                         >
@@ -131,12 +171,15 @@ const ReviewForm = ({
                     <Box sx={{ flex: '1 1 auto' }} /> 
                     <Button 
                         type="submit"
-                        variant="contained" 
+                        variant="text" 
+                        startIcon={<PersonAddAlt />}
+                        sx={{
+                            bgcolor: '#ebfff2',
+                        }}
                     > 
                         <Typography
                             variant="button"
                             sx={{
-                                color: '#000',
                                 fontWeight: '700',
                             }}
                         >

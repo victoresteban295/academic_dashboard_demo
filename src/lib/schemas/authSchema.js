@@ -8,7 +8,7 @@ export const LoginFormSchema = z.object({
 export const InstitutionFormSchema = z.object({
     profileType: string().min(1, {message: "Profile Type is Required"}),
     schoolName: string().trim().toLowerCase().min(1, {message: "Academic Instituition is Required"}).max(50, {message: "Maximum 50 Character"}),
-    schoolId: string().trim().min(1, {message: "Identification Code Requried"}),
+    schoolId: string().trim().min(10, {message: "Identification Code Must Be 10 Characters"}).max(10, {message: "Maximum 10 Character" }),
 });
 
 export const StudentProfileSchema = z.object({

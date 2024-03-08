@@ -23,7 +23,12 @@ const MobileMenu = ({username, role}) => {
                     onClick={handleClick}
                     size="small"
                     sx={{
-                        mx: {xs: 0, sm: 3},
+                        mx: {
+                            fold: 0,
+                            mobile: 0,
+                            tablet: 3,
+                            desktop: 3,
+                        },
                     }}
                 >
                     <MenuIcon fontSize='large' /> 

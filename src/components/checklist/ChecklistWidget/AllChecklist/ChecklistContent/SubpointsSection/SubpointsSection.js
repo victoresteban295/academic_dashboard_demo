@@ -236,7 +236,12 @@ const SubpointsSection = ({
                 <Box
                     sx={{
                         width: '30px',
-                        display: {xs: 'none', md: 'flex'},
+                        display: {
+                            fold: 'none',
+                            mobile: 'none',
+                            tablet: 'flex',
+                            desktop: 'flex',
+                        },
                     }}
                 >
                     {showEdit && (

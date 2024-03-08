@@ -21,7 +21,7 @@ const ChecklistButton = ({ username, role }) => {
                 startIcon={isActive ? <Ballot /> : <BallotOutlined />}
                 sx={{
                     color: 'text.primary',
-                    "&hover": {
+                    "&:hover": {
                         background: '#ccc5b9'
                     }
                 }}

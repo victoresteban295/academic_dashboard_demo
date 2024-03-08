@@ -1,7 +1,8 @@
 import { ReminderSchema } from "@/lib/schemas/reminderSchema";
-import { createReminder, editReminder } from "@/lib/utils/reminders/frontend/modifyReminders";
+import { createReminder, deleteReminder, editReminder } from "@/lib/utils/reminders/frontend/modifyReminders";
 import { zodResolver } from "@hookform/resolvers/zod";
-import { Box, Button, Divider, FormControl, FormHelperText, InputBase, MenuItem, Popover, Stack, TextField, Typography } from "@mui/material";
+import { Add, Delete, Edit } from "@mui/icons-material";
+import { Box, Button, Dialog, Divider, FormControl, FormHelperText, InputBase, MenuItem, Stack, TextField } from "@mui/material";
 import { DatePicker, TimePicker } from "@mui/x-date-pickers";
 import dayjs from "dayjs";
 import { Controller, useForm } from "react-hook-form";
@@ -108,11 +109,13 @@ const ReminderBackdrop = ({
                 changeUpcomingReminders(updatedUpcoming);
                 changeGroups(updatedGroups);
 
-                //Backend API: Update Database
+                //Refresh Default Values
                 handleCurrentReminders("");
                 setTimeout(() => {
                     handleCurrentReminders(currentReminders);
                 }, 10)
+
+                //Backend API: Update Database
 
             }
         } catch(error) {
@@ -121,20 +124,37 @@ const ReminderBackdrop = ({
         }
     }
 
+    /* Delete Reminder */
+    const handleDeleteReminder = () => {
+        try {
+            //Frontend: Delete Reminder
+            const { 
+                updatedGroups, 
+                updatedToday, 
+                updatedUpcoming } = deleteReminder(groupId, remindId, groups, todayReminders, upcomingReminders);
+
+            //Update State Value
+            changeTodayReminders(updatedToday);
+            changeUpcomingReminders(updatedUpcoming);
+            changeGroups(updatedGroups);
+
+            //Backend API: Update Database
+
+        } catch(error) {
+            handleOpenAlert(error.message);
+
+            //Undo Changes Made
+            changeGroups(); //Add parameter
+            changeUpcomingReminders();
+            changeGroups();
+        }
+    }
+
+
     return (
-        <Popover
-            anchorOrigin={{
-                vertical: 'top',
-                horizontal: 'center',
-            }}
-            transformOrigin={{
-                vertical: 'center',
-                horizontal: 'center',
-            }}
-            sx={{ 
-                mt: 10,
-                zIndex: (theme) => theme.zIndex.drawer + 1 
-            }}
+        <Dialog
+            fullWidth={true}
+            maxWidth="mobile"
             open={open}
             onClose={handleCloseBackdrop}
         >
@@ -145,7 +165,6 @@ const ReminderBackdrop = ({
                     spacing={2}
                     sx={{
                         display: 'flex',
-                        maxWidth: '500px',
                         p: 2,
                     }}
                 >
@@ -224,7 +243,12 @@ const ReminderBackdrop = ({
                         />
                     </FormControl>
                     <Stack
-                        direction={{ xs: 'column', sm: 'row'}}
+                        direction={{
+                            fold: 'column',
+                            mobile: 'column',
+                            tablet: 'row',
+                            desktop: 'row',
+                        }}
                         spacing={2}
                         sx={{
                             display: 'flex',
@@ -299,28 +323,85 @@ const ReminderBackdrop = ({
                     />
                     <Box
                         sx={{
-                            display: 'flex',
-                            justifyContent: 'flex-end',
+                            display: {
+                                fold: 'none',
+                                mobile: 'flex',
+                                tablet: 'flex',
+                                desktop: 'flex',
+                            },
+                            justifyContent: remindId === "" ? 'flex-end' : 'space-between',
+                            alignItems: 'center',
                         }}
                     >
-                        <Button
-                            type="submit"
-                            variant='contained'
-                        >
-                            <Typography
-                                variant='button'
+                        {remindId != "" && (
+                            <Button
+                                color="error"
+                                variant="text"
+                                onClick={handleDeleteReminder}
+                                startIcon={<Delete />}
                                 sx={{
-                                    color: '#000',
                                     fontWeight: '700',
+                                    bgcolor: 'error.light'
                                 }}
                             >
-                                {(title === "") ? "Create" : "Edit"}
-                            </Typography>
-                        </Button>
+                                Delete
+                            </Button> 
+                        )}
+                        <Button
+                            variant="text"
+                            startIcon={remindId === "" ? <Add /> : <Edit />}
+                            type="submit"
+                            sx={{
+                                fontWeight: '700',
+                                bgcolor: 'primary.light'
+                            }}
+                        >
+                            {remindId === "" ? "Create" : "Edit"}
+                        </Button> 
+                    </Box>
+                    <Box
+                        sx={{
+                            display: {
+                                fold: 'flex',
+                                mobile: 'none',
+                                tablet: 'none',
+                                desktop: 'none',
+                            },
+                            justifyContent: remindId === "" ? 'flex-end' : 'space-between',
+                            alignItems: 'center',
+                        }}
+                    >
+                        {remindId != "" && (
+                            <Button
+                                size="small"
+                                color="error"
+                                onClick={handleDeleteReminder}
+                                variant="text"
+                                startIcon={<Delete />}
+                                sx={{
+                                    fontWeight: '700',
+                                    bgcolor: 'error.light'
+                                }}
+                            >
+                                Delete
+                            </Button> 
+                        )}
+                        <Button
+                            type="submit"
+                            size="small"
+                            variant="text"
+                            startIcon={remindId === "" ? <Add /> : <Edit />}
+                            sx={{
+                                fontWeight: '700',
+                                bgcolor: 'primary.light'
+                            }}
+                        >
+                            {remindId === "" ? "Create" : "Edit"}
+                        </Button> 
                     </Box>
                 </Stack>
             </form>
-        </Popover>
+        </Dialog>
     )
 }
 

@@ -21,7 +21,7 @@ const RemindersButton = ({ username, role }) => {
                 startIcon={isActive ? <Notifications /> : <NotificationsNoneOutlined />}
                 sx={{
                     color: 'text.primary',
-                    "&hover": {
+                    "&:hover": {
                         background: '#ccc5b9'
                     }
                 }}

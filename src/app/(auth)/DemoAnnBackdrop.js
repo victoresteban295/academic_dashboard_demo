@@ -1,4 +1,4 @@
-import { Box, Button, Divider, Popover, Stack, Typography } from "@mui/material";
+import { Box, Button, Dialog, Divider, Stack, Typography } from "@mui/material";
 import { Close } from "@mui/icons-material";
 import { Teko } from "next/font/google"
 
@@ -9,19 +9,9 @@ const teko = Teko({
 
 const DemoAnnBackdrop = ({ openDemoAnn, handleCloseDemoAnn}) => {
     return (
-        <Popover
-            anchorOrigin={{
-                vertical: 'top',
-                horizontal: 'center',
-            }}
-            transformOrigin={{
-                vertical: 'center',
-                horizontal: 'center',
-            }}
-            sx={{ 
-                bgcolor: 'rgba(0,0,0,0.5)',
-                zIndex: (theme) => theme.zIndex.drawer + 1 
-            }}
+        <Dialog
+            fullWidth={true}
+            maxWidth={"tablet"}
             open={openDemoAnn}
             onClose={handleCloseDemoAnn}
         >
@@ -30,7 +20,6 @@ const DemoAnnBackdrop = ({ openDemoAnn, handleCloseDemoAnn}) => {
                 spacing={4}
                 sx={{
                     display: 'flex',
-                    maxWidth: '700px',
                     p: 4,
                 }}
             >
@@ -50,7 +39,12 @@ const DemoAnnBackdrop = ({ openDemoAnn, handleCloseDemoAnn}) => {
                     <Typography
                         variant='body1'
                         sx={{
-                            textAlign:{xs: 'center', sm: 'left'} 
+                            textAlign:{
+                                fold: 'center',
+                                mobile: 'center',
+                                tablet: 'left',
+                                desktop: 'left',
+                            } 
                         }}
                     >
                         {"The purpose of this demo is to showcase Academic Dashboard’s intuitive UI without connecting to any backend dependency. Users can explore Academic Dashboard as a student or professor but any changes made will be reverted after the page refreshes."}
@@ -58,7 +52,12 @@ const DemoAnnBackdrop = ({ openDemoAnn, handleCloseDemoAnn}) => {
                     <Typography
                         variant='body1'
                         sx={{
-                            textAlign:{xs: 'center', sm: 'left'} 
+                            textAlign: {
+                                fold: 'center',
+                                mobile: 'center',
+                                tablet: 'left',
+                                desktop: 'left',
+                            } 
                         }}
                     >
                         {"To view Academic Dashboard's source code, click on the GitHub link found on the footer below."}
@@ -66,7 +65,12 @@ const DemoAnnBackdrop = ({ openDemoAnn, handleCloseDemoAnn}) => {
                     <Typography
                         variant='body1'
                         sx={{
-                            textAlign:{xs: 'center', sm: 'left'} 
+                            textAlign: {
+                                fold: 'center',
+                                mobile: 'center',
+                                tablet: 'left',
+                                desktop: 'left',
+                            } 
                         }}
                     >
                         {"To log in as a professor or as a student use the following credentials: "}
@@ -74,7 +78,12 @@ const DemoAnnBackdrop = ({ openDemoAnn, handleCloseDemoAnn}) => {
                 </Stack>
                 <Stack
                     className="accounts-credentials"
-                    direction={{xs: 'column', sm: 'row'}}
+                    direction={{
+                        fold: 'column',
+                        mobile: 'column',
+                        tablet: 'row',
+                        desktop: 'row',
+                    }}
                     spacing={3}
                     justifyContent="space-evenly"
                     alignItems="center"
@@ -196,20 +205,30 @@ const DemoAnnBackdrop = ({ openDemoAnn, handleCloseDemoAnn}) => {
                 <Box
                     sx={{
                         display: "flex",
-                        justifyContent: {xs: 'center', sm: 'flex-end'},
+                        justifyContent: {
+                            fold: 'center', 
+                            mobile: 'center',
+                            tablet: 'flex-end',
+                            desktop: 'flex-end',
+                        },
                         pt: 2,
                     }}
                 >
                     <Button
-                        variant="contained"
+                        variant="text"
                         startIcon={<Close />}
                         onClick={handleCloseDemoAnn}
+                        sx={{
+                            bgcolor: 'primary.light',
+                            fontWeight: '700',
+                            px: 2,
+                        }}
                     >
                         Close
                     </Button>
                 </Box>
             </Stack>
-        </Popover>
+        </Dialog>
     )
 }
 

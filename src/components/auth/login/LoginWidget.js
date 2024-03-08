@@ -85,8 +85,12 @@ const LoginWidget = () => {
                         sx={{
                             color: '#000',
                             fontWeight: '700',
+                            "&:hover": {
+                                textDecoration: 'underline',
+                            }
                         }}
-                        variant="caption">
+                        variant="caption"
+                    >
                         Forgot Password?
                     </Typography>
                 </Button>
@@ -100,10 +104,17 @@ const LoginWidget = () => {
                 }}
             >
                 <Link href="/register" style={{textDecoration: 'none'}} >
-                    <Button variant="contained" onClick={triggerLoading}>
+                    <Button 
+                        variant="text" 
+                        onClick={triggerLoading}
+                        sx={{
+                            bgcolor: 'primary.light',
+                            px: 3,
+                        }}
+                    >
                         <Typography 
                             sx={{
-                                color: '#000',
+                                color: 'primary.main',
                                 fontWeight: '700',
                             }}
                             variant="button">

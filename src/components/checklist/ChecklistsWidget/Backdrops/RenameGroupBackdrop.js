@@ -1,5 +1,5 @@
 import { renameGroup } from "@/lib/utils/checklist/frontend/modifyGrouplist";
-import { Box, Button, FilledInput, Popover, Stack, Typography } from "@mui/material";
+import { Box, Button, Dialog, FilledInput, Stack, Typography } from "@mui/material";
 import { useState } from "react";
 
 const RenameGroupBackdrop = ({ 
@@ -48,28 +48,16 @@ const RenameGroupBackdrop = ({
     }
 
     return (
-        <Popover
-            anchorOrigin={{
-                vertical: 'top',
-                horizontal: 'center',
-            }}
-            transformOrigin={{
-                vertical: 'center',
-                horizontal: 'center',
-            }}
-            sx={{ 
-                mt: 10,
-                zIndex: (theme) => theme.zIndex.drawer + 1 
-            }}
+        <Dialog
+            fullWidth={true}
+            maxWidth="mobile"
             open={open}
             onClose={handleCloseBackdrop}
         >
             <Stack
                 spacing={1}
                 sx={{
-                    display: 'flex',
                     p: 2,
-                    maxWidth: '250px',
                 }}
             >
                 <Box 
@@ -96,28 +84,31 @@ const RenameGroupBackdrop = ({
                     autoFocus
                     hiddenLabel
                     disableUnderline
-                    placeholder='Rename Group Title'
+                    placeholder='Rename Group Title...'
                     onChange={(event) => setRename(event.target.value)}
                 />
-                <Box>
+                <Box
+                    sx={{
+                        display: 'flex',
+                        justifyContent: 'flex-end',
+                        alignItems: 'center',
+                    }}
+                >
                     <Button
-                        variant="contained"
+                        variant="text"
                         size='small'
                         disabled={rename.trim() === ''}
                         onClick={handleRenameGroup}
+                        sx={{
+                            fontWeight: '700',
+                            bgcolor: 'primary.light',
+                        }}
                     >
-                        <Typography
-                            sx={{
-                                color: '#000',
-                                fontWeight: '700',
-                            }}
-                        >
-                            Rename
-                        </Typography>
+                        {"Rename"}
                     </Button>
                 </Box>
             </Stack>
-        </Popover>
+        </Dialog>
     ) 
 }
 

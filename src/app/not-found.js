@@ -71,17 +71,14 @@ const NotFound = () => {
                                 }}
                             >
                                 <Button
-                                    variant='contained'
+                                    variant='text'
                                     startIcon={<ArrowBack />}
+                                    sx={{
+                                        bgcolor: 'primary.light',
+                                        fontWeigth: '700',
+                                    }}
                                 >
-                                    <Typography 
-                                        sx={{
-                                            color: '#000',
-                                            fontWeight: '700',
-                                        }}
-                                        variant="button">
-                                        Go Back
-                                    </Typography>
+                                    {"Go Back"}
                                 </Button>
                             </Link>
                         </Stack>

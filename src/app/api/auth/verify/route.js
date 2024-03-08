@@ -3,13 +3,13 @@ import { NextResponse } from "next/server";
 
 export async function POST(request) {
     const { profile, schoolId } = await request.json();
-    const isStudProfile = (profile === "STUDENT");
-    const isStudId = (schoolId === "demo-student");
-    const isStudent = isStudProfile && isStudId;
+    const isStudent = (profile === "STUDENT");
+    /* const isStudId = (schoolId === "demo-student"); */
+    /* const isStudent = isStudProfile && isStudId; */
 
-    const isProfProfile = (profile === "PROFESSOR");
-    const isProfId = (schoolId === "demo-professor");
-    const isProfessor = isProfProfile && isProfId;
+    const isProfessor = (profile === "PROFESSOR");
+    /* const isProfId = (schoolId === "demo-professor"); */
+    /* const isProfessor = isProfProfile && isProfId; */
     
     if(isStudent || isProfessor) {
         let resBody = {

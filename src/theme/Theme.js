@@ -7,9 +7,18 @@ const cabin = Cabin({
 })
 
 let theme = createTheme({
+    breakpoints: {
+        values: {
+            fold: 0,
+            mobile: 350,
+            tablet: 600,
+            desktop: 900,
+        },
+    },
     palette: {
         primary: {
             main: '#78a1bb',
+            light: '#e3f3ff',
             secondary: "#06d6a0"
         },
         secondary: {
@@ -26,7 +35,8 @@ let theme = createTheme({
             background: '#fff'
         },
         error: {
-            main: '#ef476f'
+            main: '#ff5858',
+            light: '#ffe9e9'
         }
     },
     typography: {

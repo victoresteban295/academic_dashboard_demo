@@ -21,7 +21,7 @@ const DashboardButton = ({ username, role }) => {
                 startIcon={isActive ? <Dashboard /> : <DashboardOutlined />}
                 sx={{
                     color: 'text.primary',
-                    "&hover": {
+                    "&:hover": {
                         background: '#ccc5b9',
                     }
                 }}
