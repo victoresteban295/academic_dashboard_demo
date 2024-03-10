@@ -4,6 +4,20 @@ import { Box, Stack } from '@mui/material';
 import SideNavbar from '@/components/SideNavbar';
 
 const ProfLayout = ({children}) => {
+
+    const courses = [
+        {
+            course: "Math 230",
+            dept: "math",
+            num: "230",
+        }, 
+        {
+            course: "Math 245",
+            dept: "math",
+            num: "245",
+        } 
+    ]
+
     return (
         <html lang="en">
             <body>
@@ -72,12 +86,13 @@ const ProfLayout = ({children}) => {
                                     >
                                         <Box
                                             sx={{
-                                                width: '100%',
+                                                width: '175px',
                                             }}
                                         >
                                             <SideNavbar
                                                 username="demo-professor"
                                                 role="professor"
+                                                courses={courses}
                                             />
                                         </Box>
                                     </Box>

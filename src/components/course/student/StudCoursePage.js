@@ -4,11 +4,20 @@ import MainWidget from "./MainWidget";
 import RightWidget from "./RightWidget";
 import { getCourse } from "@/lib/data/course/student";
 import dayjs from "dayjs";
+import { notFound } from "next/navigation";
+
+const handleGetCourse = (crs, todayDateTime) => {
+    try {
+        return getCourse(crs, todayDateTime); 
+    } catch(error) {
+        notFound();
+    }
+}
 
 const StudCoursePage = ({ crs }) => {
 
     const todayDateTime = dayjs();
-    const course = getCourse(crs, todayDateTime); 
+    const course = handleGetCourse(crs, todayDateTime); 
 
     return (
         <Box

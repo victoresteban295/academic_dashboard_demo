@@ -18,12 +18,15 @@ const CourseButton = ({ username, role, course, dept, num }) => {
         <Button
             variant='text'
             endIcon={isActive ? <ArrowLeft /> : ''}
-            /* onClick={handleClick} */
+            onClick={handleClick}
             sx={{
                 color: isActive ? 'primary.main' : 'text.primary',
                 flexGrow: '1',
+                width: '100%',
+                display: 'flex',
+                justifyContent: 'flex-start',
                 "&:hover": {
-                    background: '#ccc5b9'
+                    bgcolor: 'primary.light',
                 }
             }}
         >

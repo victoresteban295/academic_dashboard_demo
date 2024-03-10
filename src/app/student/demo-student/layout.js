@@ -4,6 +4,30 @@ import { Box, Stack } from '@mui/material';
 import SideNavbar from '@/components/SideNavbar';
 
 const StudLayout = ({children}) => {
+
+    const courses = [
+        {
+            course: "Math 230",
+            dept: "math",
+            num: "230",
+        }, 
+        {
+            course: "Math 245",
+            dept: "math",
+            num: "245",
+        },
+        {
+            course: "CS 215",
+            dept: "cs",
+            num: "215",
+        }, 
+        {
+            course: "CS 310",
+            dept: "cs",
+            num: "310",
+        }, 
+    ]
+
     return (
         <html lang="en">
             <body>
@@ -72,12 +96,13 @@ const StudLayout = ({children}) => {
                                     >
                                         <Box
                                             sx={{
-                                                width: '100%',
+                                                width: '175px',
                                             }}
                                         >
                                             <SideNavbar
                                                 username="demo-student"
                                                 role="student"
+                                                courses={courses}
                                             />
                                         </Box>
                                     </Box>

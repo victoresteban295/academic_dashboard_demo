@@ -4,7 +4,7 @@ import { Box, IconButton, Menu, Tooltip } from "@mui/material"
 import { useState } from "react"
 import SideNavbar from '../SideNavbar'
 
-const MobileMenu = ({username, role}) => {
+const MobileMenu = ({username, role, courses}) => {
 
     const [anchorEl, setAnchorEl] = useState(null);
     const open = Boolean(anchorEl);
@@ -59,6 +59,7 @@ const MobileMenu = ({username, role}) => {
                     <SideNavbar 
                         username={username}
                         role={role}
+                        courses={courses}
                     />
                 </Box>
                 
