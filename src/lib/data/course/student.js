@@ -1,5 +1,18 @@
 import dayjs from "dayjs";
 
+export const getTitle = (course) => {
+
+    if(course === "math245") {
+        return "Math 245: Differential Equations";
+    } else if(course === "math230") {
+        return "Math 230: Discrete Mathematics";
+    } else if(course === "cs215") {
+        return "CS 215: Software Engineering";
+    } else if (course === "cs310") {
+        return "CS 310: Data Structures and Algorithms";
+    } 
+}
+
 export const getCourse = (course, today) => {
 
     /* Current Week */
@@ -884,13 +897,13 @@ export const getCourse = (course, today) => {
                 iso8601: dayjs(`${todayEndWeek.subtract(8, 'week').format("MM/DD/YY")}-11:59 PM`,"MM/DD/YY-h:mm A").toISOString(),
                 tasks: [
                     {
-                        taskId: "hby45392-9",
+                        taskId: "taskId001C",
                         task: "Assignment",
-                        title: "Homework #1",
-                        date: dayjs(`${todayStrWeek.subtract(8, 'week').format("MM/DD/YY")}`, "MM/DD/YY").add(3, 'day').format("MM/DD/YY"),
-                        note: "Chapter 1: P.23 - P.24",
-                        due: "Before Class",
-                        iso8601: dayjs(`${dayjs(`${todayStrWeek.subtract(8, 'week').format("MM/DD/YY")}`, "MM/DD/YY").add(3, 'day').format("MM/DD/YY")}-12:00 AM`,"MM/DD/YY-h:mm A").toISOString()
+                        title: "Weekly Reading",
+                        date: dayjs(`${todayStrWeek.subtract(8, 'week').format("MM/DD/YY")}`, "MM/DD/YY").add(1, 'day').format("MM/DD/YY"),
+                        note: "Chapter 1",
+                        due: "End of Day",
+                        iso8601: dayjs(`${dayjs(`${todayStrWeek.subtract(8, 'week').format("MM/DD/YY")}`, "MM/DD/YY").add(1, 'day').format("MM/DD/YY")}-12:00 AM`,"MM/DD/YY-h:mm A").toISOString()
                     }
                 ]
             },
@@ -900,31 +913,13 @@ export const getCourse = (course, today) => {
                 iso8601: dayjs(`${todayEndWeek.subtract(7, 'week').format("MM/DD/YY")}-11:59 PM`,"MM/DD/YY-h:mm A").toISOString(),
                 tasks: [
                     {
-                        taskId: "nu734392-9",
+                        taskId: "taskId002C",
                         task: "Assignment",
-                        title: "Homework #2",
+                        title: "Weekly Reading",
                         date: dayjs(`${todayStrWeek.subtract(7, 'week').format("MM/DD/YY")}`, "MM/DD/YY").add(1, 'day').format("MM/DD/YY"),
-                        note: "Chapter 2: P.12 - P.15",
-                        due: "Before Class",
+                        note: "Chapter 2",
+                        due: "End of Day",
                         iso8601: dayjs(`${dayjs(`${todayStrWeek.subtract(7, 'week').format("MM/DD/YY")}`, "MM/DD/YY").add(1, 'day').format("MM/DD/YY")}-12:00 AM`,"MM/DD/YY-h:mm A").toISOString()
-                    },
-                    {
-                        taskId: "0leqvse4-9",
-                        task: "Assignment",
-                        title: "Homework #3",
-                        date: dayjs(`${todayStrWeek.subtract(7, 'week').format("MM/DD/YY")}`, "MM/DD/YY").add(4, 'day').format("MM/DD/YY"),
-                        note: "Chapter 3: P.14 - P.23",
-                        due: "Before Class",
-                        iso8601: dayjs(`${dayjs(`${todayStrWeek.subtract(7, 'week').format("MM/DD/YY")}`, "MM/DD/YY").add(4, 'day').format("MM/DD/YY")}-12:00 AM`,"MM/DD/YY-h:mm A").toISOString()
-                    },
-                    {
-                        taskId: "aleqvse4-8",
-                        task: "Quiz",
-                        title: "Quiz #1",
-                        date: dayjs(`${todayStrWeek.subtract(7, 'week').format("MM/DD/YY")}`, "MM/DD/YY").add(5, 'day').format("MM/DD/YY"),
-                        note: "This quiz will cover Chapter 1 to Chapter 3. No book or notes allowed",
-                        due: "During Class",
-                        iso8601: dayjs(`${dayjs(`${todayStrWeek.subtract(7, 'week').format("MM/DD/YY")}`, "MM/DD/YY").add(5, 'day').format("MM/DD/YY")}-12:00 AM`,"MM/DD/YY-h:mm A").toISOString()
                     }
                 ]
             },
@@ -934,13 +929,13 @@ export const getCourse = (course, today) => {
                 iso8601: dayjs(`${todayEndWeek.subtract(6, 'week').format("MM/DD/YY")}-11:59 PM`,"MM/DD/YY-h:mm A").toISOString(),
                 tasks: [
                     {
-                        taskId: "1234vse4-8",
+                        taskId: "taskId003C",
                         task: "Assignment",
-                        title: "Homework #4",
-                        date: dayjs(`${todayStrWeek.subtract(6, 'week').format("MM/DD/YY")}`, "MM/DD/YY").add(3, 'day').format("MM/DD/YY"),
-                        note: "Chapter 4: P.20 - P.22",
-                        due: "Before Class",
-                        iso8601: dayjs(`${dayjs(`${todayStrWeek.subtract(6, 'week').format("MM/DD/YY")}`, "MM/DD/YY").add(3, 'day').format("MM/DD/YY")}-12:00 AM`,"MM/DD/YY-h:mm A").toISOString()
+                        title: "Weekly Reading",
+                        date: dayjs(`${todayStrWeek.subtract(7, 'week').format("MM/DD/YY")}`, "MM/DD/YY").add(1, 'day').format("MM/DD/YY"),
+                        note: "Chapter 3",
+                        due: "End of Day",
+                        iso8601: dayjs(`${dayjs(`${todayStrWeek.subtract(7, 'week').format("MM/DD/YY")}`, "MM/DD/YY").add(1, 'day').format("MM/DD/YY")}-12:00 AM`,"MM/DD/YY-h:mm A").toISOString()
                     },
                 ]
             },
@@ -1331,13 +1326,13 @@ export const getCourse = (course, today) => {
                 iso8601: dayjs(`${todayEndWeek.subtract(8, 'week').format("MM/DD/YY")}-11:59 PM`,"MM/DD/YY-h:mm A").toISOString(),
                 tasks: [
                     {
-                        taskId: "taskId001B",
+                        taskId: "taskId001D",
                         task: "Assignment",
-                        title: "Assignment #1",
-                        date: dayjs(`${todayStrWeek.subtract(8, 'week').format("MM/DD/YY")}`, "MM/DD/YY").add(1, 'day').format("MM/DD/YY"),
-                        note: "Chapter 3: P.33, 35, 37, and 39",
-                        due: "After Class",
-                        iso8601: dayjs(`${dayjs(`${todayStrWeek.subtract(8, 'week').format("MM/DD/YY")}`, "MM/DD/YY").add(1, 'day').format("MM/DD/YY")}-12:00 AM`,"MM/DD/YY-h:mm A").toISOString()
+                        title: "Coding Challenge #1",
+                        date: dayjs(`${todayStrWeek.subtract(8, 'week').format("MM/DD/YY")}`, "MM/DD/YY").add(5, 'day').format("MM/DD/YY"),
+                        note: "Chapter 2: P.23",
+                        due: "End of Day",
+                        iso8601: dayjs(`${dayjs(`${todayStrWeek.subtract(8, 'week').format("MM/DD/YY")}`, "MM/DD/YY").add(5, 'day').format("MM/DD/YY")}-12:00 AM`,"MM/DD/YY-h:mm A").toISOString()
                     }
                 ]
             },
@@ -1347,23 +1342,23 @@ export const getCourse = (course, today) => {
                 iso8601: dayjs(`${todayEndWeek.subtract(7, 'week').format("MM/DD/YY")}-11:59 PM`,"MM/DD/YY-h:mm A").toISOString(),
                 tasks: [
                     {
-                        taskId: "taskId002B",
+                        taskId: "taskId002D",
                         task: "Assignment",
-                        title: "Assignment #2",
+                        title: "Coding Challenge #2",
                         date: dayjs(`${todayStrWeek.subtract(7, 'week').format("MM/DD/YY")}`, "MM/DD/YY").add(1, 'day').format("MM/DD/YY"),
-                        note: "Chapter 4: P.12, 18, and 22",
-                        due: "After Class",
+                        note: "Chapter 3: P.11",
+                        due: "End of Day",
                         iso8601: dayjs(`${dayjs(`${todayStrWeek.subtract(7, 'week').format("MM/DD/YY")}`, "MM/DD/YY").add(1, 'day').format("MM/DD/YY")}-12:00 AM`,"MM/DD/YY-h:mm A").toISOString()
                     },
                     {
-                        taskId: "taskId003B",
-                        task: "Quiz",
-                        title: "Quiz #1",
-                        date: dayjs(`${todayStrWeek.subtract(7, 'week').format("MM/DD/YY")}`, "MM/DD/YY").add(4, 'day').format("MM/DD/YY"),
-                        note: "This quiz will cover Chapter 3 and Chapter 4. No book or notes allowed",
-                        due: "During Class",
-                        iso8601: dayjs(`${dayjs(`${todayStrWeek.subtract(7, 'week').format("MM/DD/YY")}`, "MM/DD/YY").add(4, 'day').format("MM/DD/YY")}-12:00 AM`,"MM/DD/YY-h:mm A").toISOString()
-                    }
+                        taskId: "taskId003D",
+                        task: "Assignment",
+                        title: "Coding Challenge #3",
+                        date: dayjs(`${todayStrWeek.subtract(7, 'week').format("MM/DD/YY")}`, "MM/DD/YY").add(5, 'day').format("MM/DD/YY"),
+                        note: "Chapter 4: P.32",
+                        due: "End of Day",
+                        iso8601: dayjs(`${dayjs(`${todayStrWeek.subtract(7, 'week').format("MM/DD/YY")}`, "MM/DD/YY").add(5, 'day').format("MM/DD/YY")}-12:00 AM`,"MM/DD/YY-h:mm A").toISOString()
+                    },
                 ]
             },
             {
@@ -1372,13 +1367,22 @@ export const getCourse = (course, today) => {
                 iso8601: dayjs(`${todayEndWeek.subtract(6, 'week').format("MM/DD/YY")}-11:59 PM`,"MM/DD/YY-h:mm A").toISOString(),
                 tasks: [
                     {
-                        taskId: "taskId004B",
+                        taskId: "taskId004D",
                         task: "Assignment",
-                        title: "Assignment #3",
+                        title: "Coding Challenge #4",
                         date: dayjs(`${todayStrWeek.subtract(6, 'week').format("MM/DD/YY")}`, "MM/DD/YY").add(1, 'day').format("MM/DD/YY"),
-                        note: "Chapter 5: P.25 - 31",
-                        due: "After Class",
+                        note: "Chapter 5: P.03",
+                        due: "End of Day",
                         iso8601: dayjs(`${dayjs(`${todayStrWeek.subtract(6, 'week').format("MM/DD/YY")}`, "MM/DD/YY").add(1, 'day').format("MM/DD/YY")}-12:00 AM`,"MM/DD/YY-h:mm A").toISOString()
+                    },
+                    {
+                        taskId: "taskId005D",
+                        task: "Assignment",
+                        title: "Coding Challenge #5",
+                        date: dayjs(`${todayStrWeek.subtract(6, 'week').format("MM/DD/YY")}`, "MM/DD/YY").add(5, 'day').format("MM/DD/YY"),
+                        note: "Chapter 6: P.30",
+                        due: "End of Day",
+                        iso8601: dayjs(`${dayjs(`${todayStrWeek.subtract(6, 'week').format("MM/DD/YY")}`, "MM/DD/YY").add(5, 'day').format("MM/DD/YY")}-12:00 AM`,"MM/DD/YY-h:mm A").toISOString()
                     }
                 ]
             },
@@ -1388,13 +1392,22 @@ export const getCourse = (course, today) => {
                 iso8601: dayjs(`${todayEndWeek.subtract(5, 'week').format("MM/DD/YY")}-11:59 PM`,"MM/DD/YY-h:mm A").toISOString(),
                 tasks: [
                     {
-                        taskId: "taskId005B",
+                        taskId: "taskId006D",
                         task: "Assignment",
-                        title: "Assignment #4",
+                        title: "Coding Challenge #6",
                         date: dayjs(`${todayStrWeek.subtract(5, 'week').format("MM/DD/YY")}`, "MM/DD/YY").add(1, 'day').format("MM/DD/YY"),
-                        note: "Chapter 6: P.03, 05, 08, and 14",
-                        due: "After Class",
+                        note: "Chapter 7: P.24",
+                        due: "End of Day",
                         iso8601: dayjs(`${dayjs(`${todayStrWeek.subtract(5, 'week').format("MM/DD/YY")}`, "MM/DD/YY").add(1, 'day').format("MM/DD/YY")}-12:00 AM`,"MM/DD/YY-h:mm A").toISOString()
+                    },
+                    {
+                        taskId: "taskId007D",
+                        task: "Assignment",
+                        title: "Coding Challenge #7",
+                        date: dayjs(`${todayStrWeek.subtract(5, 'week').format("MM/DD/YY")}`, "MM/DD/YY").add(5, 'day').format("MM/DD/YY"),
+                        note: "Chapter 8: P.48",
+                        due: "End of Day",
+                        iso8601: dayjs(`${dayjs(`${todayStrWeek.subtract(5, 'week').format("MM/DD/YY")}`, "MM/DD/YY").add(5, 'day').format("MM/DD/YY")}-12:00 AM`,"MM/DD/YY-h:mm A").toISOString()
                     }
                 ]
             },
@@ -1404,22 +1417,22 @@ export const getCourse = (course, today) => {
                 iso8601: dayjs(`${todayEndWeek.subtract(4, 'week').format("MM/DD/YY")}-11:59 PM`,"MM/DD/YY-h:mm A").toISOString(),
                 tasks: [
                     {
-                        taskId: "taskId006B",
+                        taskId: "taskId008D",
                         task: "Assignment",
-                        title: "Assignment #5",
+                        title: "Coding Challenge #8",
                         date: dayjs(`${todayStrWeek.subtract(4, 'week').format("MM/DD/YY")}`, "MM/DD/YY").add(1, 'day').format("MM/DD/YY"),
-                        note: "Chapter 7: P.12, 18, and 22",
-                        due: "After Class",
+                        note: "Chapter 8: P.56",
+                        due: "End of Day",
                         iso8601: dayjs(`${dayjs(`${todayStrWeek.subtract(4, 'week').format("MM/DD/YY")}`, "MM/DD/YY").add(1, 'day').format("MM/DD/YY")}-12:00 AM`,"MM/DD/YY-h:mm A").toISOString()
                     },
                     {
-                        taskId: "taskId007B",
-                        task: "Quiz",
-                        title: "Quiz #2",
-                        date: dayjs(`${todayStrWeek.subtract(4, 'week').format("MM/DD/YY")}`, "MM/DD/YY").add(4, 'day').format("MM/DD/YY"),
-                        note: "This quiz will cover Chapter 5, 6 and Chapter 7. No book or notes allowed",
-                        due: "During Class",
-                        iso8601: dayjs(`${dayjs(`${todayStrWeek.subtract(4, 'week').format("MM/DD/YY")}`, "MM/DD/YY").add(4, 'day').format("MM/DD/YY")}-12:00 AM`,"MM/DD/YY-h:mm A").toISOString()
+                        taskId: "taskId009D",
+                        task: "Assignment",
+                        title: "Coding Challenge #9",
+                        date: dayjs(`${todayStrWeek.subtract(4, 'week').format("MM/DD/YY")}`, "MM/DD/YY").add(5, 'day').format("MM/DD/YY"),
+                        note: "Chapter 9: P.04",
+                        due: "End of Day",
+                        iso8601: dayjs(`${dayjs(`${todayStrWeek.subtract(4, 'week').format("MM/DD/YY")}`, "MM/DD/YY").add(5, 'day').format("MM/DD/YY")}-12:00 AM`,"MM/DD/YY-h:mm A").toISOString()
                     }
                 ]
             },
@@ -1429,14 +1442,23 @@ export const getCourse = (course, today) => {
                 iso8601: dayjs(`${todayEndWeek.subtract(3, 'week').format("MM/DD/YY")}-11:59 PM`,"MM/DD/YY-h:mm A").toISOString(),
                 tasks: [
                     {
-                        taskId: "taskId008B",
+                        taskId: "taskId010D",
                         task: "Assignment",
-                        title: "Assignment #6",
+                        title: "Coding Challenge #10",
                         date: dayjs(`${todayStrWeek.subtract(3, 'week').format("MM/DD/YY")}`, "MM/DD/YY").add(1, 'day').format("MM/DD/YY"),
-                        note: "Chapter 8: P.21-26",
-                        due: "After Class",
+                        note: "Chapter 10: P.21",
+                        due: "End of Day",
                         iso8601: dayjs(`${dayjs(`${todayStrWeek.subtract(3, 'week').format("MM/DD/YY")}`, "MM/DD/YY").add(1, 'day').format("MM/DD/YY")}-12:00 AM`,"MM/DD/YY-h:mm A").toISOString()
                     },
+                    {
+                        taskId: "taskId011D",
+                        task: "Assignment",
+                        title: "Coding Challenge #11",
+                        date: dayjs(`${todayStrWeek.subtract(3, 'week').format("MM/DD/YY")}`, "MM/DD/YY").add(5, 'day').format("MM/DD/YY"),
+                        note: "Chapter 11: P.08",
+                        due: "End of Day",
+                        iso8601: dayjs(`${dayjs(`${todayStrWeek.subtract(3, 'week').format("MM/DD/YY")}`, "MM/DD/YY").add(5, 'day').format("MM/DD/YY")}-12:00 AM`,"MM/DD/YY-h:mm A").toISOString()
+                    }
                 ]
             },
             {
@@ -1445,14 +1467,32 @@ export const getCourse = (course, today) => {
                 iso8601: dayjs(`${todayEndWeek.subtract(2, 'week').format("MM/DD/YY")}-11:59 PM`,"MM/DD/YY-h:mm A").toISOString(),
                 tasks: [
                     {
-                        taskId: "taskId009B",
+                        taskId: "taskId012D",
                         task: "Assignment",
-                        title: "Assignment #7",
+                        title: "Coding Challenge #12",
                         date: dayjs(`${todayStrWeek.subtract(2, 'week').format("MM/DD/YY")}`, "MM/DD/YY").add(1, 'day').format("MM/DD/YY"),
-                        note: "Chapter 10: P.02, 03, 05, and 08",
-                        due: "After Class",
+                        note: "Chapter 12: P.43",
+                        due: "End of Day",
                         iso8601: dayjs(`${dayjs(`${todayStrWeek.subtract(2, 'week').format("MM/DD/YY")}`, "MM/DD/YY").add(1, 'day').format("MM/DD/YY")}-12:00 AM`,"MM/DD/YY-h:mm A").toISOString()
                     },
+                    {
+                        taskId: "taskId013D",
+                        task: "Assignment",
+                        title: "Coding Challenge #13",
+                        date: dayjs(`${todayStrWeek.subtract(2, 'week').format("MM/DD/YY")}`, "MM/DD/YY").add(5, 'day').format("MM/DD/YY"),
+                        note: "Chapter 13: P.22",
+                        due: "End of Day",
+                        iso8601: dayjs(`${dayjs(`${todayStrWeek.subtract(2, 'week').format("MM/DD/YY")}`, "MM/DD/YY").add(5, 'day').format("MM/DD/YY")}-12:00 AM`,"MM/DD/YY-h:mm A").toISOString()
+                    },
+                    {
+                        taskId: "taskId014D",
+                        task: "Project",
+                        title: "Submit Final Project Proposal",
+                        date: dayjs(`${todayStrWeek.subtract(2, 'week').format("MM/DD/YY")}`, "MM/DD/YY").add(5, 'day').format("MM/DD/YY"),
+                        note: "Email me by the end of the day what you are going to focus your final project on.",
+                        due: "End of Day",
+                        iso8601: dayjs(`${dayjs(`${todayStrWeek.subtract(2, 'week').format("MM/DD/YY")}`, "MM/DD/YY").add(5, 'day').format("MM/DD/YY")}-12:00 AM`,"MM/DD/YY-h:mm A").toISOString()
+                    }
                 ]
             },
             {
@@ -1461,14 +1501,23 @@ export const getCourse = (course, today) => {
                 iso8601: dayjs(`${todayEndWeek.subtract(1, 'week').format("MM/DD/YY")}-11:59 PM`,"MM/DD/YY-h:mm A").toISOString(),
                 tasks: [
                     {
-                        taskId: "taskId010B",
+                        taskId: "taskId015D",
                         task: "Assignment",
-                        title: "Assignment #8",
+                        title: "Coding Challenge #14",
                         date: dayjs(`${todayStrWeek.subtract(1, 'week').format("MM/DD/YY")}`, "MM/DD/YY").add(1, 'day').format("MM/DD/YY"),
-                        note: "Chapter 11: P.22-27",
-                        due: "After Class",
+                        note: "Chapter 14: P.25",
+                        due: "End of Day",
                         iso8601: dayjs(`${dayjs(`${todayStrWeek.subtract(1, 'week').format("MM/DD/YY")}`, "MM/DD/YY").add(1, 'day').format("MM/DD/YY")}-12:00 AM`,"MM/DD/YY-h:mm A").toISOString()
                     },
+                    {
+                        taskId: "taskId016D",
+                        task: "Assignment",
+                        title: "Coding Challenge #15",
+                        date: dayjs(`${todayStrWeek.subtract(1, 'week').format("MM/DD/YY")}`, "MM/DD/YY").add(5, 'day').format("MM/DD/YY"),
+                        note: "Chapter 15: P.11",
+                        due: "End of Day",
+                        iso8601: dayjs(`${dayjs(`${todayStrWeek.subtract(1, 'week').format("MM/DD/YY")}`, "MM/DD/YY").add(5, 'day').format("MM/DD/YY")}-12:00 AM`,"MM/DD/YY-h:mm A").toISOString()
+                    }
                 ]
             },
             /* Upcoming */
@@ -1478,22 +1527,22 @@ export const getCourse = (course, today) => {
                 iso8601: dayjs(`${todayEndWeek.format("MM/DD/YY")}-11:59 PM`,"MM/DD/YY-h:mm A").toISOString(),
                 tasks: [
                     {
-                        taskId: "taskId011B",
+                        taskId: "taskId017D",
                         task: "Assignment",
-                        title: "Assignment #9",
+                        title: "Coding Challenge #16",
                         date: todayStrWeek.add(1, 'day').format("MM/DD/YY"),
-                        note: "Chapter 12: P.10-14",
-                        due: "After Class",
+                        note: "Chapter 16: P.10",
+                        due: "End of Day",
                         iso8601: dayjs(`${todayStrWeek.add(1, 'day').format("MM/DD/YY")}-12:00 AM`,"MM/DD/YY-h:mm A").toISOString()
                     },
                     {
-                        taskId: "taskId012B",
-                        task: "Exam",
-                        title: "Midterm Exam",
-                        date: todayStrWeek.add(4, 'day').format("MM/DD/YY"),
-                        note: "Exam will cover topics from Chapter 03 up to Chapter 12. No Notes or Books will be allowed",
-                        due: "During Class",
-                        iso8601: dayjs(`${todayStrWeek.add(4, 'day').format("MM/DD/YY")}-12:00 AM`,"MM/DD/YY-h:mm A").toISOString()
+                        taskId: "taskId018D",
+                        task: "Assignment",
+                        title: "Coding Challenge #17",
+                        date: todayStrWeek.add(5, 'day').format("MM/DD/YY"),
+                        note: "Chapter 17: P.22",
+                        due: "End of Day",
+                        iso8601: dayjs(`${todayStrWeek.add(5, 'day').format("MM/DD/YY")}-12:00 AM`,"MM/DD/YY-h:mm A").toISOString()
                     }
                 ]
             },
@@ -1503,14 +1552,23 @@ export const getCourse = (course, today) => {
                 iso8601: dayjs(`${todayEndWeek.add(1, 'week').format("MM/DD/YY")}-11:59 PM`,"MM/DD/YY-h:mm A").toISOString(),
                 tasks: [
                     {
-                        taskId: "taskId013B",
+                        taskId: "taskId019D",
                         task: "Assignment",
-                        title: "Assignment #10",
+                        title: "Coding Challenge #18",
                         date: dayjs(`${todayStrWeek.add(1, 'week').format("MM/DD/YY")}`, "MM/DD/YY").add(1, 'day').format("MM/DD/YY"),
-                        note: "Chapter 13: P.18, 19, and 22",
-                        due: "After Class",
+                        note: "Chapter 18: P.32",
+                        due: "End of Day",
                         iso8601: dayjs(`${dayjs(`${todayStrWeek.add(1, 'week').format("MM/DD/YY")}`, "MM/DD/YY").add(1, 'day').format("MM/DD/YY")}-12:00 AM`,"MM/DD/YY-h:mm A").toISOString()
                     },
+                    {
+                        taskId: "taskId020D",
+                        task: "Assignment",
+                        title: "Coding Challenge #19",
+                        date: dayjs(`${todayStrWeek.add(1, 'week').format("MM/DD/YY")}`, "MM/DD/YY").add(5, 'day').format("MM/DD/YY"),
+                        note: "Chapter 19: P.67",
+                        due: "End of Day",
+                        iso8601: dayjs(`${dayjs(`${todayStrWeek.add(1, 'week').format("MM/DD/YY")}`, "MM/DD/YY").add(5, 'day').format("MM/DD/YY")}-12:00 AM`,"MM/DD/YY-h:mm A").toISOString()
+                    }
                 ]
             },
             {
@@ -1519,22 +1577,22 @@ export const getCourse = (course, today) => {
                 iso8601: dayjs(`${todayEndWeek.add(2, 'week').format("MM/DD/YY")}-11:59 PM`,"MM/DD/YY-h:mm A").toISOString(),
                 tasks: [
                     {
-                        taskId: "taskId014B",
+                        taskId: "taskId021D",
                         task: "Assignment",
-                        title: "Assignment #11",
+                        title: "Coding Challenge #20",
                         date: dayjs(`${todayStrWeek.add(2, 'week').format("MM/DD/YY")}`, "MM/DD/YY").add(1, 'day').format("MM/DD/YY"),
-                        note: "Chapter 14: P.23, 25, and 30",
-                        due: "After Class",
+                        note: "Chapter 20: P.34",
+                        due: "End of Day",
                         iso8601: dayjs(`${dayjs(`${todayStrWeek.add(2, 'week').format("MM/DD/YY")}`, "MM/DD/YY").add(1, 'day').format("MM/DD/YY")}-12:00 AM`,"MM/DD/YY-h:mm A").toISOString()
                     },
                     {
-                        taskId: "taskId015B",
-                        task: "Quiz",
-                        title: "Quiz #3",
-                        date: dayjs(`${todayStrWeek.add(2, 'week').format("MM/DD/YY")}`, "MM/DD/YY").add(4, 'day').format("MM/DD/YY"),
-                        note: "This quiz will cover Chapter 13 and Chapter 14. No book or notes allowed",
-                        due: "During Class",
-                        iso8601: dayjs(`${dayjs(`${todayStrWeek.add(2, 'week').format("MM/DD/YY")}`, "MM/DD/YY").add(4, 'day').format("MM/DD/YY")}-12:00 AM`,"MM/DD/YY-h:mm A").toISOString()
+                        taskId: "taskId022D",
+                        task: "Assignment",
+                        title: "Coding Challenge #21",
+                        date: dayjs(`${todayStrWeek.add(2, 'week').format("MM/DD/YY")}`, "MM/DD/YY").add(5, 'day').format("MM/DD/YY"),
+                        note: "Chapter 21: P.27",
+                        due: "End of Day",
+                        iso8601: dayjs(`${dayjs(`${todayStrWeek.add(2, 'week').format("MM/DD/YY")}`, "MM/DD/YY").add(5, 'day').format("MM/DD/YY")}-12:00 AM`,"MM/DD/YY-h:mm A").toISOString()
                     }
                 ]
             },
@@ -1544,13 +1602,22 @@ export const getCourse = (course, today) => {
                 iso8601: dayjs(`${todayEndWeek.add(3, 'week').format("MM/DD/YY")}-11:59 PM`,"MM/DD/YY-h:mm A").toISOString(),
                 tasks: [
                     {
-                        taskId: "taskId016B",
+                        taskId: "taskId023D",
                         task: "Assignment",
-                        title: "Assignment #12",
+                        title: "Coding Challenge #22",
                         date: dayjs(`${todayStrWeek.add(3, 'week').format("MM/DD/YY")}`, "MM/DD/YY").add(1, 'day').format("MM/DD/YY"),
-                        note: "Chapter 15: P.01, 11, 13, and 14",
-                        due: "After Class",
+                        note: "Chapter 22: P.56",
+                        due: "End of Day",
                         iso8601: dayjs(`${dayjs(`${todayStrWeek.add(3, 'week').format("MM/DD/YY")}`, "MM/DD/YY").add(1, 'day').format("MM/DD/YY")}-12:00 AM`,"MM/DD/YY-h:mm A").toISOString()
+                    },
+                    {
+                        taskId: "taskId024D",
+                        task: "Assignment",
+                        title: "Coding Challenge #23",
+                        date: dayjs(`${todayStrWeek.add(3, 'week').format("MM/DD/YY")}`, "MM/DD/YY").add(5, 'day').format("MM/DD/YY"),
+                        note: "Chapter 23: P.51",
+                        due: "End of Day",
+                        iso8601: dayjs(`${dayjs(`${todayStrWeek.add(3, 'week').format("MM/DD/YY")}`, "MM/DD/YY").add(5, 'day').format("MM/DD/YY")}-12:00 AM`,"MM/DD/YY-h:mm A").toISOString()
                     }
                 ]
             },
@@ -1560,55 +1627,23 @@ export const getCourse = (course, today) => {
                 iso8601: dayjs(`${todayEndWeek.add(4, 'week').format("MM/DD/YY")}-11:59 PM`,"MM/DD/YY-h:mm A").toISOString(),
                 tasks: [
                     {
-                        taskId: "taskId017B",
+                        taskId: "taskId025D",
                         task: "Assignment",
-                        title: "Assignment #13",
+                        title: "Coding Challenge #24",
                         date: dayjs(`${todayStrWeek.add(4, 'week').format("MM/DD/YY")}`, "MM/DD/YY").add(1, 'day').format("MM/DD/YY"),
-                        note: "Chapter 16: P.10-14",
-                        due: "After Class",
+                        note: "Chapter 24: P.34",
+                        due: "End of Day",
                         iso8601: dayjs(`${dayjs(`${todayStrWeek.add(4, 'week').format("MM/DD/YY")}`, "MM/DD/YY").add(1, 'day').format("MM/DD/YY")}-12:00 AM`,"MM/DD/YY-h:mm A").toISOString()
+                    },
+                    {
+                        taskId: "taskId026D",
+                        task: "Project",
+                        title: "Project 1st Draft",
+                        date: dayjs(`${todayStrWeek.add(4, 'week').format("MM/DD/YY")}`, "MM/DD/YY").add(5, 'day').format("MM/DD/YY"),
+                        note: "Only include the research description.",
+                        due: "End of Day",
+                        iso8601: dayjs(`${dayjs(`${todayStrWeek.add(4, 'week').format("MM/DD/YY")}`, "MM/DD/YY").add(5, 'day').format("MM/DD/YY")}-12:00 AM`,"MM/DD/YY-h:mm A").toISOString()
                     }
-                ]
-            },
-            {
-                strWeek: todayStrWeek.add(5, 'week').format("MMMM D"),
-                endWeek: todayEndWeek.add(5, 'week').format("MMMM D"),
-                iso8601: dayjs(`${todayEndWeek.add(5, 'week').format("MM/DD/YY")}-11:59 PM`,"MM/DD/YY-h:mm A").toISOString(),
-                tasks: [
-                    {
-                        taskId: "taskId018B",
-                        task: "Assignment",
-                        title: "Assignment #14",
-                        date: dayjs(`${todayStrWeek.add(5, 'week').format("MM/DD/YY")}`, "MM/DD/YY").add(1, 'day').format("MM/DD/YY"),
-                        note: "Chapter 17: P.13-16",
-                        due: "After Class",
-                        iso8601: dayjs(`${dayjs(`${todayStrWeek.add(5, 'week').format("MM/DD/YY")}`, "MM/DD/YY").add(1, 'day').format("MM/DD/YY")}-12:00 AM`,"MM/DD/YY-h:mm A").toISOString()
-                    },
-                    {
-                        taskId: "taskId019B",
-                        task: "Quiz",
-                        title: "Quiz #4",
-                        date: dayjs(`${todayStrWeek.add(5, 'week').format("MM/DD/YY")}`, "MM/DD/YY").add(4, 'day').format("MM/DD/YY"),
-                        note: "This quiz will cover Chapter 15-17. No book or notes allowed",
-                        due: "During Class",
-                        iso8601: dayjs(`${dayjs(`${todayStrWeek.add(5, 'week').format("MM/DD/YY")}`, "MM/DD/YY").add(4, 'day').format("MM/DD/YY")}-12:00 AM`,"MM/DD/YY-h:mm A").toISOString()
-                    },
-                ]
-            },
-            {
-                strWeek: todayStrWeek.add(6, 'week').format("MMMM D"),
-                endWeek: todayEndWeek.add(6, 'week').format("MMMM D"),
-                iso8601: dayjs(`${todayEndWeek.add(6, 'week').format("MM/DD/YY")}-11:59 PM`,"MM/DD/YY-h:mm A").toISOString(),
-                tasks: [
-                    {
-                        taskId: "taskId020B",
-                        task: "Assignment",
-                        title: "Assignment #15",
-                        date: dayjs(`${todayStrWeek.add(6, 'week').format("MM/DD/YY")}`, "MM/DD/YY").add(1, 'day').format("MM/DD/YY"),
-                        note: "Chapter 20: P.33, 34, and 38",
-                        due: "After Class",
-                        iso8601: dayjs(`${dayjs(`${todayStrWeek.add(6, 'week').format("MM/DD/YY")}`, "MM/DD/YY").add(1, 'day').format("MM/DD/YY")}-12:00 AM`,"MM/DD/YY-h:mm A").toISOString()
-                    },
                 ]
             },
             {
@@ -1617,23 +1652,14 @@ export const getCourse = (course, today) => {
                 iso8601: dayjs(`${todayEndWeek.add(7, 'week').format("MM/DD/YY")}-11:59 PM`,"MM/DD/YY-h:mm A").toISOString(),
                 tasks: [
                     {
-                        taskId: "taskId021B",
-                        task: "Assignment",
-                        title: "Assignment #16",
-                        date: dayjs(`${todayStrWeek.add(7, 'week').format("MM/DD/YY")}`, "MM/DD/YY").add(1, 'day').format("MM/DD/YY"),
-                        note: "Chapter 21: P.23, 25, 27 and 29",
-                        due: "After Class",
-                        iso8601: dayjs(`${dayjs(`${todayStrWeek.add(7, 'week').format("MM/DD/YY")}`, "MM/DD/YY").add(1, 'day').format("MM/DD/YY")}-12:00 AM`,"MM/DD/YY-h:mm A").toISOString()
+                        taskId: "taskId027D",
+                        task: "Project",
+                        title: "Final Project",
+                        date: dayjs(`${todayStrWeek.add(7, 'week').format("MM/DD/YY")}`, "MM/DD/YY").add(5, 'day').format("MM/DD/YY"),
+                        note: "Email me final project. Bring a hard copy to class",
+                        due: "End of Day",
+                        iso8601: dayjs(`${dayjs(`${todayStrWeek.add(7, 'week').format("MM/DD/YY")}`, "MM/DD/YY").add(5, 'day').format("MM/DD/YY")}-12:00 AM`,"MM/DD/YY-h:mm A").toISOString()
                     },
-                    {
-                        taskId: "taskId022B",
-                        task: "Exam",
-                        title: "Final Exam",
-                        date: dayjs(`${todayStrWeek.add(7, 'week').format("MM/DD/YY")}`, "MM/DD/YY").add(4, 'day').format("MM/DD/YY"),
-                        note: "Exam will cover all topics taught. No Notes or Book allowed",
-                        due: "During Class",
-                        iso8601: dayjs(`${dayjs(`${todayStrWeek.add(7, 'week').format("MM/DD/YY")}`, "MM/DD/YY").add(4, 'day').format("MM/DD/YY")}-12:00 AM`,"MM/DD/YY-h:mm A").toISOString()
-                    }
                 ]
             },
         ]

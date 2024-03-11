@@ -1,5 +1,14 @@
 import dayjs from "dayjs";
 
+export const getTitle = (course) => {
+
+    if(course === "math245") {
+        return "Math 245: Differential Equations";
+    } else if(course === "math230") {
+        return "Math 230: Discrete Mathematics";
+    } 
+}
+
 export const getCourse = (course, today) => {
 
     /* Current Week */
@@ -12,10 +21,10 @@ export const getCourse = (course, today) => {
 
         /* Professor Information */
         school: "Academic College",
-        instructor: "Dr.Seely",
+        instructor: "Dr.Demo",
         office: "Palenske Hall 330",
         phone: "323 233-3221",
-        email: "dseely@college.edu",
+        email: "demoprof@college.edu",
 
         /* Course Information */
         course: "Math 245",
@@ -466,10 +475,10 @@ export const getCourse = (course, today) => {
 
         /* Professor Information */
         school: "Academic College",
-        instructor: "Dr.Professor",
+        instructor: "Dr.Demo",
         office: "Palenske Hall 330",
         phone: "323 233-3221",
-        email: "demo-professor@college.edu",
+        email: "demoprof@college.edu",
 
         /* Course Information */
         course: "Math 230",
