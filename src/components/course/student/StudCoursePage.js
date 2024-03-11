@@ -1,5 +1,7 @@
 "use client"
 import { Box } from "@mui/material";
+import { LocalizationProvider } from "@mui/x-date-pickers";
+import { AdapterDayjs } from "@mui/x-date-pickers/AdapterDayjs";
 import MainWidget from "./MainWidget";
 import RightWidget from "./RightWidget";
 import { getCourse } from "@/lib/data/course/student";
@@ -20,66 +22,68 @@ const StudCoursePage = ({ crs }) => {
     const course = handleGetCourse(crs, todayDateTime); 
 
     return (
-        <Box
-            className="course-page"
-            sx={{
-                display: 'flex',
-                flexGrow: 1,
-                width: '100%',
-                height: '100%',
-            }}
-        >
+        <LocalizationProvider dateAdapter={AdapterDayjs}>
             <Box
-                className='main-content-container'
+                className="course-page"
                 sx={{
+                    display: 'flex',
                     flexGrow: 1,
-                    maxWidth: '750px',
-                    p: 1,
-                }}
-            >
-                <MainWidget
-                    instructor={course.instructor} 
-                    office={course.office}
-                    phone={course.phone}
-                    email={course.email}
-                    schedules={course.schedules}
-                    title={course.title}
-                    school={course.school}
-                    description={course.description}
-                    infoSections={course.infoSections}
-                    weeklyTasks={course.weeklyTasks}
-                />
-            </Box>
-            <Box
-                className='rightside-menu-container'
-                sx={{
-                    display: {
-                        fold: 'none',
-                        mobile: 'none',
-                        tablet: 'none',
-                        desktop: 'block',
-                    },
-                    maxWidth: '250px',
-                    p: 1,
+                    width: '100%',
+                    height: '100%',
                 }}
             >
                 <Box
+                    className='main-content-container'
                     sx={{
-                        width: '100%',
-                        position: 'sticky',
-                        top: '70px',
+                        flexGrow: 1,
+                        maxWidth: '750px',
+                        p: 1,
                     }}
                 >
-                    <RightWidget
+                    <MainWidget
                         instructor={course.instructor} 
                         office={course.office}
                         phone={course.phone}
                         email={course.email}
                         schedules={course.schedules}
+                        title={course.title}
+                        school={course.school}
+                        description={course.description}
+                        infoSections={course.infoSections}
+                        weeklyTasks={course.weeklyTasks}
                     />
                 </Box>
+                <Box
+                    className='rightside-menu-container'
+                    sx={{
+                        display: {
+                            fold: 'none',
+                            mobile: 'none',
+                            tablet: 'none',
+                            desktop: 'block',
+                        },
+                        maxWidth: '250px',
+                        p: 1,
+                    }}
+                >
+                    <Box
+                        sx={{
+                            width: '100%',
+                            position: 'sticky',
+                            top: '70px',
+                        }}
+                    >
+                        <RightWidget
+                            instructor={course.instructor} 
+                            office={course.office}
+                            phone={course.phone}
+                            email={course.email}
+                            schedules={course.schedules}
+                        />
+                    </Box>
+                </Box>
             </Box>
-        </Box>
+        </LocalizationProvider>
     )
 
 }

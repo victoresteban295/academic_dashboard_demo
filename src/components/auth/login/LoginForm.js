@@ -77,6 +77,8 @@ const LoginForm = ({ triggerLoading, closeLoading }) => {
                     <Alert
                         severity="error"
                         sx={{
+                            color: 'text.primary',
+                            bgcolor: 'error.light',
                             width: '100%',
                         }} 
                     > 

@@ -1605,4 +1605,3 @@ export const getCourse = (course, today) => {
     }
 }
 
-
