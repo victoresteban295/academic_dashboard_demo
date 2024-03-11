@@ -24,7 +24,6 @@ const DemoAnn = () => {
             }}
         >
             <Alert 
-                variant="outlined"
                 severity="info" 
                 onClick={handleOpenDemoAnn}
                 sx={{
@@ -32,7 +31,10 @@ const DemoAnn = () => {
                     cursor: 'pointer',
                 }}
             >
-                <AlertTitle> Demo </AlertTitle>
+                <AlertTitle
+                > 
+                    Demo 
+                </AlertTitle>
                 Certain features are not available and any changes made will not be saved! Click here to learn more!
             </Alert>
             <DemoAnnBackdrop 
